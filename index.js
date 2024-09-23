@@ -1,5 +1,4 @@
 // Scroll effect for hiding/showing the navbar
-// Scroll effect for hiding/showing the navbar
 let lastScrollTop = 0;
 const navbar = document.getElementById("navbar");
 
@@ -29,6 +28,7 @@ window.addEventListener("scroll", function () {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
   // Highlight the current section link
+
   if (sections.length > 0) {
     let currentSection = "";
 
@@ -52,14 +52,13 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
 // Smooth scrolling for nav links
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("nav a[href^='#']").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const targetId = this.getAttribute("href").substring(1);
-      
+
       if (targetId === "home") {
         window.scrollTo({
           top: 0,
@@ -69,7 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           const navHeight = navbar.offsetHeight;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.scrollY -
+            navHeight;
           window.scrollTo({
             top: targetPosition,
             behavior: "smooth",
@@ -89,9 +91,7 @@ menu.addEventListener("click", () => {
   navLinks.classList.toggle("flex");
 });
 
-
-
-//FAQICON
+//FAQ hide and view
 function toggleContent(element) {
   // Find the content section in the current container
   const content = element.nextElementSibling;
@@ -120,4 +120,3 @@ function toggleContent(element) {
     icon.textContent = "+"; // Change icon to plus
   }
 }
-
