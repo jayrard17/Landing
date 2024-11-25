@@ -1,668 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="output.css" rel="stylesheet" />
-  </head>
 
-  <body class="p-0 m-0 bg-white">
-    <!--navbar-->
-    <nav
-      id="navbar"
-      class="bg-white visible shadow-md sticky top-0 w-full transition-opacity duration-300 ease-in-out z-50 h-[10vh] content-center"
-    >
-      <div
-        class="max-w-screen-xl container mx-auto px-4 flex items-center justify-between"
-      >
-        <button
-          id="menu"
-          class="text-2xl flex flex-col cursor-pointer md:hidden"
-        >
-          <span
-            class="h-[3px] w-[25px] bg-gray-800 my-[3px] transition-all duration-300"
-          ></span>
-          <span
-            class="h-[3px] w-[25px] bg-gray-800 my-[3px] transition-all duration-300"
-          ></span>
-          <span
-            class="h-[3px] w-[25px] bg-gray-800 my-[3px] transition-all duration-300"
-          ></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+
+  </style>
+</head>
+
+<body class="p-0 m-0 bg-white overflow-x-hidden flex flex-col relative min-h-screen">
+  <!-- Navbar -->
+  <nav id="navbar"
+    class="bg-white visible shadow-md sticky top-0 w-full transition-opacity duration-300 ease-in-out z-50 h-[8vh] md:h-[10vh] flex items-center">
+    <div class="max-w-screen-xl container mx-auto pr-5 flex items-center justify-between">
+      <div class="text-xl font-bold text-black hidden md:block">
+        Lister Motorcycle and Accessories
+      </div>
+
+      <!-- Hamburger Menu Icon -->
+      <div id="menu" class="md:hidden fixed left-4 top-4">
+        <button class="text-gray-500 focus:outline-none" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
         </button>
-        <div class="text-xl font-bold text-black hidden md:block">
-          Lister Motorcycle and Accessories
-        </div>
-        <div class="flex-1.5 text-left hidden md:block">
-          <ul id="nav-links" class="flex space-x-4">
-            <li>
-              <a
-                id="nav-home"
-                href="#home"
-                class="p-2.5 inline-block hover:underline hover:bg-transparent hover:text-green-500"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                id="nav-features"
-                href="#features"
-                class="p-2.5 inline-block hover:underline hover:bg-transparent hover:text-green-500"
-                >Features</a
-              >
-            </li>
-            <li>
-              <a
-                id="nav-pricing"
-                href="#pricing"
-                class="p-2.5 inline-block hover:underline hover:bg-transparent hover:text-green-500"
-                >Pricing</a
-              >
-            </li>
-            <li>
-              <a
-                id="nav-faq"
-                href="#faq"
-                class="p-2.5 inline-block hover:underline hover:bg-transparent hover:text-green-500"
-                >Faq</a
-              >
-            </li>
-            <li>
-              <a
-                id="nav-blog"
-                href="#blog"
-                class="p-2.5 inline-block hover:underline hover:bg-transparent hover:text-green-500"
-                >Blog</a
-              >
-            </li>
-            <li>
-              <a
-                id="nav-contact"
-                href="#contact"
-                class="p-2.5 inline-block hover:underline hover:bg-transparent hover:text-green-500"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="space-x-4 hidden md:flex">
-          <a class="signup" href="signup.html">SignUp</a>
-          <a class="signin" href="signin.html">SignIn</a>
+      </div>
+
+      <div class="flex-1.5 text-left hidden md:block">
+        <ul id="nav-links" class="flex space-x-4">
+          <li><a id="nav-home" href="#home"
+              class="p-2.5 inline-block hover:underline bg-white hover:text-green-500">Home</a></li>
+          <li><a id="nav-features" href="#features"
+              class="p-2.5 inline-block hover:underline bg-white hover:text-green-500">Features</a></li>
+          <li><a id="nav-pricing" href="#pricing"
+              class="p-2.5 inline-block hover:underline bg-white hover:text-green-500">Pricing</a></li>
+          <li><a id="nav-faq" href="#faq"
+              class="p-2.5 inline-block hover:underline bg-white hover:text-green-500">Faq</a></li>
+          <li><a id="nav-blog" href="#blog"
+              class="p-2.5 inline-block hover:underline bg-white hover:text-green-500">Blog</a></li>
+          <li><a id="nav-contact" href="#contact"
+              class="p-2.5 inline-block hover:underline bg-white hover:text-green-500">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Nav Links -->
+      <div id="nav-links-mobile" class="md:hidden flex-col hidden space-y-4 bg-white w-full mt-[55.5px] pt-[50vh]">
+        <a id="nav-home" href="#home" class="p-2.5 block hover:underline bg-white hover:text-green-500">Home</a>
+        <a id="nav-features" href="#features"
+          class="p-2.5 block hover:underline bg-white hover:text-green-500">Features</a>
+        <a id="nav-pricing" href="#pricing"
+          class="p-2.5 block hover:underline bg-white hover:text-green-500">Pricing</a>
+        <a id="nav-faq" href="#faq" class="p-2.5 block hover:underline bg-white hover:text-green-500">Faq</a>
+        <a id="nav-blog" href="#blog" class="p-2.5 block hover:underline bg-white hover:text-green-500">Blog</a>
+        <a id="nav-contact" href="#contact"
+          class="p-2.5 block hover:underline bg-white hover:text-green-500">Contact</a>
+      </div>
+
+      <div class="space-x-4 hidden md:flex">
+        <a class="signup hover:underline" href="signup.html">SignUp</a>
+        <a class="signin hover:underline" href="signin.html">SignIn</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!--home-->
+  <section id="home" class="mt-0 md:mt-[15vh] mb-[40vh] px-[5vw] md:px-[5vw]">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="flex-1 mb-5 md:mb-0">
+        <div class="mb-[5vh] mr-[5vw] mt-[5vh] md:mt-0">
+          <img src="lister.jpg" alt="motorcycle" class="object-fill" />
         </div>
       </div>
-    </nav>
-    <!--home-->
-    <section id="home" class="mt-[10vh] pb-[30vh]">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="flex-1">
-          <div class="mb-[5vh] mr-[5vw] ml-[5vw] mt-[5vh] md:mb-0">
-            <img src="lister.jpg" alt="lister" class="object-contain" />
-          </div>
-        </div>
-        <div class="flex-1 text-center md:text-left md:mb-0 ml-5">
-          <h2 class="text-4xl font-bold">
-            Transforming Your Motorcycle Shop Experience
+      <div class="flex-1 text-left ml-5 md:ml-0">
+        <h2 class="text-4xl font-bold">
+          Your Ultimate Motorcycle Shop Experience
+        </h2>
+        <p class="text-lg leading-8 text-gray-600 mt-10">
+          Discover a world of two-wheeled excellence with our premium motorcycles, high-performance parts, and expert
+          maintenance services. We're dedicated to enhancing your riding experience while keeping your bike in peak
+          condition. From weekend riders to hardcore enthusiasts, we're your trusted partner on the road.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="mb-[40vh]">
+    <div class="feature">
+      <div
+        class="pt-[15vh] pb-[30vh] px-[5vw] lg:pr-[5vw] flex flex-col lg:flex-row bg-gradient-to-r from-[#f8f8ff] to-transparent">
+        <div class="flex-1 text-left ml-5 max-w-full">
+          <h2 class="text-4xl font-bold text-inherit">
+            Power Your Ride
           </h2>
           <p class="text-lg leading-8 text-gray-600 mt-10">
-            At our motorcycle shop, we're dedicated to providing you with the
-            best in motorcycles, parts, and service. Our knowledgeable team is
-            here to help you find the perfect ride and ensure it's in top
-            condition. With our extensive range of products and expert services,
-            we aim to enhance your motorcycling experience and keep you on the
-            road with confidence.
+            At MotoTech Customs & Parts, we're passionate about delivering premium motorcycles, high-performance parts,
+            and expert servicing tailored to your riding style. Our skilled technicians are dedicated to helping you
+            find the perfect bike and maintaining it at peak performance. With our extensive selection of quality
+            components and professional services, we're here to enhance your riding experience.
+          </p>
+        </div>
+        <div class="flex-1 text-left ml-5 max-w-full mt-10 lg:mt-0">
+          <h2 class="text-4xl font-bold">Custom Performance</h2>
+          <p class="text-lg leading-8 text-gray-600 mt-10">
+            Experience the thrill of customization with our expert modification services. From engine tuning to
+            aesthetic upgrades, we help you create the perfect ride. Our team specializes in performance enhancement,
+            custom builds, and precision maintenance to ensure your motorcycle reflects your unique style while
+            delivering optimal performance.
+          </p>
+        </div>
+        <div class="flex-1 text-left ml-5 max-w-full mt-10 lg:mt-0">
+          <h2 class="text-4xl font-bold">Expert Service</h2>
+          <p class="text-lg leading-8 text-gray-600 mt-10">
+            Trust your bike to our certified mechanics. We provide comprehensive maintenance, repairs, and performance
+            upgrades to keep your motorcycle running at its best. From routine service to complex repairs, our team has
+            the expertise to handle all your maintenance needs with precision and care.
           </p>
         </div>
       </div>
-    </section>
+  </section>
+  <<section id="pricing" class="pt-[10vh]">
+    <div class="mx-auto px-[5vw] mb-[10vh]">
+      <h1 class="text-slate-950 font-bold text-4xl md:text-3xl lg:text-4xl text-center leading-tight">
+        Our Transparent Pricing Plans, Find the Perfect Fit for Your Needs
+      </h1>
+    </div>
 
-    <!-- Features -->
-    <section id="features" class="mb-[30vh]">
-      <div class="feature">
-        <div
-          class="pt-[20vh] pb-[20vh] pr-[5vw] flex flex-col md:flex-row bg-gradient-to-r from-[#f8f8ff] to-transparent"
-        >
-          <div class="flex-1 text-center md:text-left md:mb-0 ml-5">
-            <h2 class="text-4xl font-bold text-inherit">
-              Rev Up Your Experience
-            </h2>
-            <p class="text-lg leading-8 text-gray-600 mt-10">
-              At Lister Motor Parts & Accessories, we're passionate about
-              delivering top-notch motorcycles, parts, and services tailored to
-              your riding needs. Our experienced team is dedicated to helping
-              you find the ideal bike and keeping it in peak condition. With our
-              wide selection of high-quality products and expert services, we're
-              here to elevate your motorcycling journey and ensure you're always
-              ready for the road.
-            </p>
-          </div>
-          <div class="flex-1 text-center md:text-left md:mb-0 ml-5">
-            <h2 class="text-4xl font-bold">Gear Up for Adventure</h2>
-            <p class="text-lg leading-8 text-gray-600 mt-10">
-              At At Lister Motor Parts & Accessories, we're dedicated to
-              providing exceptional motorcycles, parts, and service. Our skilled
-              team is here to guide you to your perfect bike and ensure it's
-              always road-ready. With our extensive inventory and expert care,
-              we aim to boost your motorcycling experience and keep you cruising
-              with confidence.
-            </p>
-          </div>
-          <div class="flex-1 text-center md:text-left md:mb-0 ml-5">
-            <h2 class="text-4xl font-bold">Ride with Confidence</h2>
-            <p class="text-lg leading-8 text-gray-600 mt-10">
-              Experience the difference with Lister Motor Parts & Accessories.
-              We pride ourselves on offering the best in motorcycles,
-              accessories, and maintenance. Our knowledgeable staff is here to
-              assist you in selecting the perfect ride and keeping it in top
-              shape. From our comprehensive product range to our professional
-              services, we're committed to enhancing your riding experience and
-              keeping you confidently on the road.
-            </p>
-          </div>
-        </div>
-        <div
-          class="flex flex-col md:flex-row items-center justify-between mt-[20vh]"
-        >
-          <div class="flex-1">
-            <div class="mb-[5vh] mr-[5vw] ml-[5vw] mt-[5vh]">
-              <img src="features.jpg" alt="lister" class="object-contain" />
-            </div>
-          </div>
-          <div class="flex-1 text-center md:text-left md:mb-0 ml-5">
-            <h2 class="text-4xl font-bold">
-              Transforming Your Motorcycle Shop Experience
-            </h2>
-            <p class="text-lg leading-8 text-gray-600 mt-10">
-              At our motorcycle shop, we're dedicated to providing you with the
-              best in motorcycles, parts, and service. Our knowledgeable team is
-              here to help you find the perfect ride and ensure it's in top
-              condition. With our extensive range of products and expert
-              services, we aim to enhance your motorcycling experience and keep
-              you on the road with confidence.
-            </p>
-          </div>
-        </div>
-        <div
-          class="flex flex-col md:flex-row items-center justify-between mt-[20vh]"
-        >
-          <div class="flex-1 text-center md:text-left md:mb-0 ml-5">
-            <h2 class="text-4xl font-bold">
-              Revamping Your Motorcycle Experience
-            </h2>
-            <p class="text-lg leading-8 text-gray-600 mt-10">
-              At our motorcycle shop, we're committed to offering a premium
-              selection of motorcycles, parts, and services to meet your every
-              need. Whether you're searching for the ideal bike or need
-              top-notch maintenance, our experienced team is here to guide you.
-              We provide a comprehensive range of products and expert services
-              designed to elevate your riding experience and keep your
-              motorcycle performing at its best. Trust us to deliver quality and
-              reliability, ensuring you're always ready for the road ahead.
-            </p>
-          </div>
-          <div class="flex-1">
-            <div class="mb-[5vh] mr-[5vw] ml-[5vw] mt-[5vh]">
-              <img src="sales.jpg" alt="lister" class="object-contain" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="pricing" class="pt-[10vh] pb-[10vh]">
-      <div class="mx-auto">
-        <h1
-          class="text-slate-950 font-bold text-[35px] text-center sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] mx-auto"
-        >
-          Our Pricing Transparent Pricing Plans, Find the Perfect Fit for Your
-          Needs
-        </h1>
-      </div>
-
-      <div class="mt-10 mb-52">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- Pricing Plan 1 -->
-          <div class="border rounded-lg shadow-lg p-6">
-            <h2 class="text-xl font-bold mb-4">Basic Plan</h2>
-            <p class="text-gray-700 mb-4">$19/month</p>
-            <ul class="text-gray-600 mb-6">
-              <li class="mb-2">Feature 1</li>
-              <li class="mb-2">Feature 2</li>
-              <li class="mb-2">Feature 3</li>
-            </ul>
-            <button
-              class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-            >
-              Get Started
-            </button>
-          </div>
-
-          <!-- Pricing Plan 2 -->
-          <div class="border rounded-lg shadow-lg p-6">
-            <h2 class="text-xl font-bold mb-4">Standard Plan</h2>
-            <p class="text-gray-700 mb-4">$49/month</p>
-            <ul class="text-gray-600 mb-6">
-              <li class="mb-2">Feature 1</li>
-              <li class="mb-2">Feature 2</li>
-              <li class="mb-2">Feature 3</li>
-            </ul>
-            <button
-              class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-            >
-              Get Started
-            </button>
-          </div>
-
-          <!-- Pricing Plan 3 -->
-          <div class="border rounded-lg shadow-lg p-6">
-            <h2 class="text-xl font-bold">Premium Plan</h2>
-            <p class="text-gray-700 mb-4">$99/month</p>
-            <ul class="text-gray-600 mb-6">
-              <li class="mb-2">Feature 1</li>
-              <li class="mb-2">Feature 2</li>
-              <li class="mb-2">Feature 3</li>
-            </ul>
-            <button
-              class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-            >
-              Get Started
-            </button>
-          </div>
-        </div>
-        <div
-          class="flex flex-col mt-[50vh] justify-center border border-solid h-[60vh] w-[90vmax] sm:w-[85vw] md:w-[80vw] mx-auto bg-slate-950 rounded-[20px] p-4"
-        >
-          <h1
-            class="text-white font-bold text-[42px] text-9xl sm:text-2xl text-center md:text-4xl"
-          >
-            Upgrade Your Business with Our Cutting-Edge POS Solutions!
-          </h1>
-
-          <h2
-            class="font-semibold text-base sm:text-lg text-center text-[#a3a2a3] mt-2 md:text-2xl"
-          >
-            Experience the future of transactions! Schedule a demo today and
-            witness how our POS solution can revolutionize your business.
-          </h2>
-          <div
-            class="flex flex-col items-center justify-center mt-5 md:flex-row space-y-4 md:space-y-0 md:space-x-4"
-          >
-            <button
-              class="bg-white text-slate-950 h-[8vh] sm:h-[10vh] w-full sm:w-[60vw] md:w-[20vw] rounded-lg text-sm sm:text-base md:text-lg font-semibold"
-            >
-              Start Free Trial
-            </button>
-            <button
-              class="bg-green-700 text-white h-[8vh] sm:h-[10vh] w-full sm:w-[60vw] md:w-[20vw] rounded-lg text-sm sm:text-base md:text-lg font-semibold"
-            >
-              Start Free Trial
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="faq" class="flex flex-col md:flex-col">
-      <div
-        class="flex flex-col bg-gradient-to-tr from-green-100 via-white to-white pb-[20vh]"
-      >
-        <h1
-          class="text-green-500 pt-[5vh] text-center font-semibold text-[18px]"
-        >
-          Have Any Question?
-        </h1>
-        <h2 class="text-slate-950 mt-[5vh] text-center text-5xl font-bold">
-          Here Some Questions Answer
-        </h2>
-
-        <div
-          class="container mx-auto mt-[10vh] max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg"
-        >
-          <div
-            class="flex cursor-pointer items-center justify-between px-4 py-2"
-            onclick="toggleContent(this)"
-          >
-            <h2 class="text-lg font-semibold">
-              How Does a POS System Benefit My Business?
-            </h2>
-            <span class="text-2xl font-bold">+</span>
-          </div>
-          <div
-            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2"
-          >
-            <h3 class="pb-2">
-              To choose the right POS system, consider your business type, size,
-              budget, required features, and potential for future growth.
-              Research various options and read reviews to make an informed
-              decision. Purchases and rewarding customers with points,
-              discounts, or special offers.
-            </h3>
-          </div>
-        </div>
-
-        <div
-          class="container mx-auto mt-[5vh] max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg"
-        >
-          <div
-            class="flex cursor-pointer items-center justify-between px-4 py-2"
-            onclick="toggleContent(this)"
-          >
-            <h2 class="text-lg font-semibold">
-              How Does a POS System Benefit My Business?
-            </h2>
-            <span class="text-2xl font-bold">+</span>
-          </div>
-          <div
-            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2"
-          >
-            <h3 class="pb-2">
-              To choose the right POS system, consider your business type, size,
-              budget, required features, and potential for future growth.
-              Research various options and read reviews to make an informed
-              decision. Purchases and rewarding customers with points,
-              discounts, or special offers.
-            </h3>
-          </div>
-        </div>
-
-        <div
-          class="container mx-auto mt-[5vh] max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg"
-        >
-          <div
-            class="flex cursor-pointer items-center justify-between px-4 py-2"
-            onclick="toggleContent(this)"
-          >
-            <h2 class="text-lg font-semibold">
-              How Does a POS System Benefit My Business?
-            </h2>
-            <span class="text-2xl font-bold">+</span>
-          </div>
-          <div
-            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2"
-          >
-            <h3 class="pb-2">
-              To choose the right POS system, consider your business type, size,
-              budget, required features, and potential for future growth.
-              Research various options and read reviews to make an informed
-              decision. Purchases and rewarding customers with points,
-              discounts, or special offers.
-            </h3>
-          </div>
-        </div>
-
-        <div
-          class="container mx-auto mt-[5vh] max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg"
-        >
-          <div
-            class="flex cursor-pointer items-center justify-between px-4 py-2"
-            onclick="toggleContent(this)"
-          >
-            <h2 class="text-lg font-semibold">
-              How Does a POS System Benefit My Business?
-            </h2>
-            <span class="text-2xl font-bold">+</span>
-          </div>
-          <div
-            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2"
-          >
-            <h3 class="pb-2">
-              To choose the right POS system, consider your business type, size,
-              budget, required features, and potential for future growth.
-              Research various options and read reviews to make an informed
-              decision. Purchases and rewarding customers with points,
-              discounts, or special offers.
-            </h3>
-          </div>
-        </div>
-
-        <div
-          class="container mx-auto mt-[5vh] max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg"
-        >
-          <div
-            class="flex cursor-pointer items-center justify-between px-4 py-2"
-            onclick="toggleContent(this)"
-          >
-            <h2 class="text-lg font-semibold">
-              How Does a POS System Benefit My Business?
-            </h2>
-            <span class="text-2xl font-bold">+</span>
-          </div>
-          <div
-            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2"
-          >
-            <h3 class="pb-2">
-              To choose the right POS system, consider your business type, size,
-              budget, required features, and potential for future growth.
-              Research various options and read reviews to make an informed
-              decision. Purchases and rewarding customers with points,
-              discounts, or special offers.
-            </h3>
-          </div>
-        </div>
-
-        <!-- fcontainer -->
-      </div>
-    </section>
-    <section
-      id="blog"
-      class="bg-gradient-to-r from-[#f0fbf4] from-[0.01%] to-[rgba(240,251,244,0)] to-[99.99%] h-full"
-    >
-      <div class="fex flex-col pt-[10vh]">
-        <h1 class="text-green-500 text-center font-semibold text-[18px]">
-          Latest Blogs
-        </h1>
-        <h2
-          class="text-slate-950 text-center text-5xl font-bold p-20 pt-5 pb-5"
-        >
-          Insights & Inspiration, Explore Our Blog for Knowledge and Ideas
-        </h2>
-        <div class="flex flex-row justify-center items-center p-10 space-x-10">
-          <div class="bg-white rounded-lg shadow-md p-6 mt-5 h-[70vh]">
-            <img
-              src="bp1.jpg"
-              alt="Blog Post Title 1"
-              class="w-full h-[80%] object-cover rounded-lg mb-2"
-            />
-            <p class="text-gray-600 mb-4">
-              A short description of the blog post goes here. This is a brief
-              overview of the content.
-            </p>
-            <a
-              href="https://www.facebook.com/share/p/5aMu2fEi8nS2xcXT/"
-              class="text-blue-500 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Read More</a
-            >
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 mt-5 h-[70vh]">
-            <img
-              src="bp2.jpg"
-              alt="Blog Post Title 2"
-              class="w-full h-[80%] object-cover rounded-lg mb-2"
-            />
-            <p class="text-gray-600 mb-4">
-              A short description of the blog post goes here. This is a brief
-              overview of the content.
-            </p>
-            <a
-              href="https://www.facebook.com/share/p/aPGqbJwg1CLKqBdr/"
-              class="text-blue-500 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Read More</a
-            >
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-6 mt-5 h-[70vh]">
-            <img
-              src="bp3.jpg"
-              alt="Blog Post Title 3"
-              class="w-full h-[80%] object-cover rounded-lg mb-2"
-            />
-            <p class="text-gray-600 mb-4">
-              A short description of the blog post goes here. This is a brief
-              overview of the content.
-            </p>
-            <a
-              href="https://www.facebook.com/share/p/1saAiz9XDr3W5EUL/"
-              class="text-blue-500 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="flex flex-row items-center py-12">
-      <div class="w-1/2">
-        <img
-          src="contactus.jpg"
-          alt="Contact Us"
-          class="w-full h-full object-fill rounded-lg"
-        />
-      </div>
-      <div class="w-1/2 p-6">
-        <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
-        <form>
-          <div class="mb-4">
-            <label for="fullName" class="block text-gray-700">Full Name</label>
-            <input
-              type="text"
-              id="fullName"
-              class="w-full p-2 border rounded"
-              placeholder="Enter your full name"
-              required
-            />
-          </div>
-          <div class="mb-4">
-            <label for="email" class="block text-gray-700">Email</label>
-            <input
-              type="email"
-              id="email"
-              class="w-full p-2 border rounded"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div class="mb-4">
-            <label for="mobile" class="block text-gray-700">Mobile</label>
-            <input
-              type="tel"
-              id="mobile"
-              class="w-full p-2 border rounded"
-              placeholder="Enter your mobile number"
-              required
-            />
-          </div>
-          <div class="mb-4">
-            <label for="subject" class="block text-gray-700">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              class="w-full p-2 border rounded"
-              placeholder="Enter subject"
-              required
-            />
-          </div>
-          <div class="mb-4">
-            <label for="message" class="block text-gray-700">Message</label>
-            <textarea
-              id="message"
-              class="w-full p-2 border rounded"
-              rows="4"
-              placeholder="Type your message here..."
-              required
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-          >
-            Send Message
+    <div class="mt-20 mb-72">
+      <div class="flex flex-wrap gap-12 max-w-6xl mx-[5vw] justify-center">
+        <!-- Basic Service Plan -->
+        <div class="border rounded-lg shadow-lg p-6 w-full sm:w-80 h-auto">
+          <h2 class="text-xl font-bold mb-4">Basic Service Package</h2>
+          <p class="text-gray-700 mb-4">₱800/service</p>
+          <ul class="text-gray-600 mb-6">
+            <li class="mb-2">Change Oil & Filter</li>
+            <li class="mb-2">General Inspection</li>
+            <li class="mb-2">Tire Pressure Check</li>
+            <li class="mb-2">Chain Lube Service</li>
+            <li class="mb-2">Basic Diagnostics</li>
+          </ul>
+          <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            onclick="window.open('https://www.facebook.com/messages/t/100442469394367', '_blank')">
+            Book Service
           </button>
-        </form>
+        </div>
+
+        <!-- Standard Service Plan -->
+        <div class="border rounded-lg shadow-lg p-6 w-full sm:w-80 h-auto">
+          <h2 class="text-xl font-bold mb-4">Standard Service Package</h2>
+          <p class="text-gray-700 mb-4">₱1,500/service</p>
+          <ul class="text-gray-600 mb-6">
+            <li class="mb-2">Full Synthetic Oil Change</li>
+            <li class="mb-2">Comprehensive Check-up</li>
+            <li class="mb-2">Brake System Cleaning</li>
+            <li class="mb-2">Chain & Sprocket Service</li>
+            <li class="mb-2">Battery Check & Service</li>
+          </ul>
+          <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            onclick="window.open('https://www.facebook.com/messages/t/100442469394367', '_blank')">
+            Book Service
+          </button>
+        </div>
+
+        <!-- Premium Service Plan -->
+        <div class="border rounded-lg shadow-lg p-6 w-full sm:w-80 h-auto">
+          <h2 class="text-xl font-bold mb-4">Premium Service Package</h2>
+          <p class="text-gray-700 mb-4">₱2,500/service</p>
+          <ul class="text-gray-600 mb-6">
+            <li class="mb-2">Race-Grade Oil Service</li>
+            <li class="mb-2">Engine Tune-up</li>
+            <li class="mb-2">Full System Check</li>
+            <li class="mb-2">Deep Carb Cleaning</li>
+            <li class="mb-2">Electrical System Check</li>
+          </ul>
+          <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            onclick="window.open('https://www.facebook.com/messages/t/100442469394367', '_blank')">
+            Book Service
+          </button>
+        </div>
       </div>
+    </div>
     </section>
 
-    <footer
-      class="bg-gradient-to-r from-[#f0fbf4] from-[0.01%] to-[rgba(240,251,244,0)] to-[99.99%] h-[50vh] flex flex-col justify-center"
-    >
-      <div class="container mx-auto text-start pl-[5vw]">
-        <div class="flex flex-wrap justify-between z-10 space-y-6 md:space-y-0">
-          <div class="w-full md:w-1/4 flex-shrink-0">
-            <h1 class="text-xl font-bold text-slate-950 hidden md:block pb-4">
-              Lister Motorcycle and Accessories
-            </h1>
-            <p class="text-slate-950">
-              Our POS Software is the ultimate solution designed to transform
-              your business operations into a streamlined and efficient
-              powerhouse. With a focus on simplicity, versatility, and
-              cutting-edge technology.
-            </p>
+
+    <div
+      class="flex flex-col mt-[40vh] lg:flex-col justify-center items-center border border-solid w-[90%] mx-auto bg-slate-950 rounded-[20px] h-[80vh] lg:h-auto p-0 lg:p-[7vw] my-[35vh]">
+
+      <h1 class="text-white font-bold text-3xl md:text-4xl lg:text-[42px] text-center leading-tight">
+        Upgrade Your Ride with Our Premium Service Membership!
+      </h1>
+
+      <h2 class="font-semibold text-lg md:text-xl lg:text-2xl text-center text-[#a3a2a3] mt-2">
+        Join our exclusive membership program for priority service, special discounts, and VIP track day access.
+        Experience motorcycle maintenance at its finest!
+      </h2>
+
+      <div class="flex items-center justify-center mt-5 space-x-4">
+        <button
+          class="bg-white text-slate-950 h-[8vh] w-[40vw] md:w-[30vw] lg:w-[20vw] rounded-lg text-lg font-semibold"
+          onclick="window.open('https://www.facebook.com/messages/t/100442469394367', '_blank')">
+          Schedule Service
+        </button>
+
+        <button
+          class="bg-green-700 text-white h-[8vh] w-[40vw] md:w-[30vw] lg:w/[20vw] rounded-lg text-lg font-semibold"
+          onclick="window.open('https://www.facebook.com/profile.php?id=100083305864216', '_blank')">
+          Visit Our Page </button>
+
+      </div>
+    </div>
+    </div>
+    </section>
+
+    <section id="faq" class="flex flex-col">
+      <div class="flex flex-col bg-gradient-to-tr from-green-100 via-white to-white pb-[30vh] px-[5vw]">
+        <h1 class="text-green-500 pt-[10vh] text-center font-semibold text-[18px] md:text-[20px]">
+          Have Any Questions About Motorcycles?
+        </h1>
+        <h2 class="text-slate-950 mt-[5vh] text-center text-3xl md:text-5xl font-bold">
+          Common Motorcycle Questions Answered
+        </h2>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              What Should I Consider When Buying My First Motorcycle?
+            </h2>
+            <span class="text-2xl font-bold">-</span>
           </div>
-          <div class="w-full md:w-1/4 flex-shrink-0 pl-[10vw]">
-            <h2 class="text-lg font-bold mb-4 text-slate-950">Quick Links</h2>
-            <ul class="space-y-2">
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Pricing</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+          <div
+            class="content max-h-[500px] overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              When buying your first motorcycle, consider factors like your riding experience, intended use (commuting,
+              touring, or sport riding), engine size, seat height, and budget. It's recommended to start with a lighter,
+              more manageable bike and gradually progress to more powerful machines as your skills improve.
+            </h3>
           </div>
-          <div class="w-full md:w-1/4 flex-shrink-0 pl-[5vw]">
-            <h2 class="text-lg font-bold mb-4 text-slate-950">Support</h2>
-            <ul class="space-y-1">
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Faq's</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Articles</a
-                >
-              </li>
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Live Chat</a
-                >
-              </li>
-            </ul>
+        </div>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              How Often Should I Service My Motorcycle?
+            </h2>
+            <span class="text-2xl font-bold">+</span>
           </div>
-          <div class="w-full md:w-1/4 flex-shrink-0">
-            <h2 class="text-lg font-bold mb-4 text-slate-950">Social Media</h2>
-            <ul class="space-y-2">
-              <li>
-                <a href="#" class="text-slate-950 no-underline hover:underline"
-                  >Facebook</a
-                >
-              </li>
-            </ul>
+          <div
+            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              Regular maintenance is crucial for motorcycle longevity. Basic service should be performed every
+              4,000-6,000
+              miles or annually, including oil changes, chain maintenance, tire checks, and brake inspections. Follow
+              your
+              manufacturer's recommended service intervals and pay attention to warning signs like unusual noises or
+              handling changes.
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              What Safety Gear Should I Invest In?
+            </h2>
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <div
+            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              Essential motorcycle safety gear includes a DOT-approved helmet, armored jacket, riding pants, boots, and
+              gloves. Consider investing in gear with good ventilation for summer and waterproof properties for wet
+              weather. Remember, quality gear is an investment in your safety and comfort while riding.
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              How Can I Improve My Riding Skills?
+            </h2>
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <div
+            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              Take advanced riding courses, practice in empty parking lots, and join riding groups to learn from
+              experienced riders. Focus on mastering slow-speed maneuvers, emergency braking, and cornering techniques.
+              Consider track days for improving your skills in a controlled environment.
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              What's The Best Way to Store My Motorcycle?
+            </h2>
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <div
+            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              Store your motorcycle in a dry, covered area away from direct sunlight. Use a quality motorcycle cover,
+              maintain battery charge with a trickle charger, and add fuel stabilizer if storing long-term. Elevate the
+              tires to prevent flat spots and perform basic maintenance before and after storage periods.
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              How Do I Prepare for Long-Distance Motorcycle Trips?
+            </h2>
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <div
+            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              Plan your route carefully, considering fuel stops and rest breaks every 150-200 miles. Pack essential
+              tools,
+              spare parts, and weather-appropriate gear. Perform a thorough pre-trip inspection including tires, chain,
+              and fluids. Consider installing comfort accessories like a good windscreen and comfortable seat for
+              long-distance riding.
+            </h3>
+          </div>
+        </div>
+
+        <div
+          class="container mx-auto mt-[5vh] max-w-full md:max-w-[50vw] rounded-[2rem] border border-solid border-[#a3a2a3] text-center font-semibold text-lg">
+          <div class="flex cursor-pointer items-center justify-between px-4 py-2" onclick="toggleContent(this)">
+            <h2 class="text-lg font-semibold">
+              What Should I Do If My Motorcycle Breaks Down?
+            </h2>
+            <span class="text-2xl font-bold">+</span>
+          </div>
+          <div
+            class="content hidden max-h-0 overflow-hidden transition-max-height duration-300 ease-in-out text-[#646464] text-start mx-2">
+            <h3 class="pb-2">
+              First, safely move your motorcycle off the road if possible. Turn on hazard lights or place warning
+              triangles if available. Assess the situation - if it's a minor issue you can fix with your toolkit,
+              proceed
+              carefully. Otherwise, contact your roadside assistance service or a local motorcycle towing company.
+              Always
+              carry emergency contact numbers and consider joining a motorcycle roadside assistance program.
+            </h3>
           </div>
         </div>
       </div>
+    </section>
+    <div class="bg-gradient-to-r from-[#f0fbf4] from-[0.01%] to-[rgba(240,251,244,0)] to-[99.99%] h-full">
+      <div class="flex flex-col pt-[30vh] pb-[15vh]">
+        <section id="blog">
+          <h1 class="text-green-500 text-center font-semibold text-[18px] pt-5">
+            Latest Posts
+          </h1>
+          <h2 class="text-slate-950 text-center text-4xl md:text-2xl font-bold pt-5 pb-5">
+            Rev Your Knowledge and Ideas: Dive into Our Motorcycle Content </h2>
+
+          <!-- posts -->
+          <div class="flex flex-wrap justify-center items-center p-10 space-x-10 space-y-10">
+            <div class="flex flex-wrap justify-center gap-5">
+              <a href="https://www.facebook.com/share/p/5aMu2fEi8nS2xcXT/"
+                class="bg-white rounded-lg shadow-lg p-6 mt-5 h-[70vh] w-full max-w-[400px] flex flex-col pb-[15vh] transition-transform duration-300 transform hover:scale-105"
+                target="_blank" rel="noopener noreferrer">
+                <img src="bp1.jpg" alt="Blog Post Title 1" class="w-full h-[80%] object-cover rounded-lg mb-2" />
+                <p class="text-gray-600 mb-9">
+                  eeeeeyyyyy🤙‼️‼️
+                  salamat bossing 😍🙏
+                  isang bagsakan na naman🤩
+                </p>
+                <span class="text-blue-500 hover:underline mt-auto">Read More</span>
+              </a>
+
+              <a href="https://www.facebook.com/share/p/aPGqbJwg1CLKqBdr/"
+                class="bg-white rounded-lg shadow-lg p-6 mt-5 h-[70vh] w-full max-w-[400px] flex flex-col pb-[15vh] transition-transform duration-300 transform hover:scale-105"
+                target="_blank" rel="noopener noreferrer">
+                <img src="bp2.jpg" alt="Blog Post Title 2" class="w-full h-[80%] object-cover rounded-lg mb-2" />
+                <p class="text-gray-600 mb-4">
+                  Salamat DOL👌☺️
+                  2ND HOME CREDIT APPROVED 👍
+                  sa walay pay pang cash diha
+                  ALI NA MAG HOME CREDIT NATA☺️
+                  visit lang sa shop
+                  Lister motor parts & accessories
+                </p>
+                <span class="text-blue-500 hover:underline mt-auto">Read More</span>
+              </a>
+
+              <a href="https://www.facebook.com/share/p/1saAiz9XDr3W5EUL/"
+                class="bg-white rounded-lg shadow-lg p-6 mt-5 h-[70vh] w-full max-w-[400px] flex flex-col pb-[15vh] transition-transform duration-300 transform hover:scale-105"
+                target="_blank" rel="noopener noreferrer">
+                <img src="bp3.jpg" alt="Blog Post Title 3" class="w-full h-[80%] object-cover rounded-lg mb-2" />
+                <p class="text-gray-600 mb-4">
+                  salamat ninyo mga bossing sa pagsalig og pag suporta permi 🙏☺️
+
+                  Lister motor parts & accessories
+                </p>
+                <span class="text-blue-500 hover:underline mt-auto">Read More</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section id="contact" class="flex flex-col md:flex-row items-center pb-[15vh]">
+        <div class="w-full md:w-1/2">
+          <img src="contactus.jpg" alt="Contact Us" class="w-full h-full object-cover rounded-lg mb-6 md:mb-0" />
+        </div>
+        <div class="w-full md:w-1/2 p-6">
+          <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+          <form>
+            <div class="mb-4">
+              <label for="fullName" class="block text-gray-700">Full Name</label>
+              <input type="text" id="fullName" class="w-full p-2 border rounded" placeholder="Enter your full name"
+                required />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700">Email</label>
+              <input type="email" id="email" class="w-full p-2 border rounded" placeholder="Enter your email"
+                required />
+            </div>
+            <div class="mb-4">
+              <label for="mobile" class="block text-gray-700">Mobile</label>
+              <input type="tel" id="mobile" class="w-full p-2 border rounded" placeholder="Enter your mobile number"
+                required />
+            </div>
+            <div class="mb-4">
+              <label for="subject" class="block text-gray-700">Subject</label>
+              <input type="text" id="subject" class="w-full p-2 border rounded" placeholder="Enter subject" required />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-gray-700">Message</label>
+              <textarea id="message" class="w-full p-2 border rounded" rows="4" placeholder="Type your message here..."
+                required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+      <!--footer-->
+      <footer id="footer"
+        class="fixed bottom-0 left-0 right-0 w-full bg-slate-950 text-white transition-all duration-300 ease-in-out transform translate-y-full h-[95vh] flex items-center justify-center">
+        <div class="text-left px-4 sm:px-[5vw] py-8 sm:py-12 w-full">
+          <div class="flex flex-col md:flex-row justify-start items-start z-10 space-y-6 md:space-y-0 md:space-x-12">
+            <div class="w-full md:w-1/4 flex-shrink-0">
+              <h1 class="text-xl sm:text-2xl font-bold pb-4 sm:pb-6">
+                Lister Motorcycle and Accessories
+              </h1>
+              <p class="text-base sm:text-lg">
+                Our POS Software is the ultimate solution designed to transform
+                your business operations into a streamlined and efficient
+                powerhouse. With a focus on simplicity, versatility, and
+                cutting-edge technology.
+              </p>
+            </div>
+
+            <!-- Flex container for Quick Links, Support, and Social Media -->
+            <div class="flex-1 pl-0 md:pl-[10vw]">
+              <h2 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Quick Links</h2>
+              <ul class="space-y-2 sm:space-y-4 text-base sm:text-lg">
+                <li><a href="#home" class="hover:underline">Home</a></li>
+                <li><a href="#features" class="hover:underline">Features</a></li>
+                <li><a href="#pricing" class="hover:underline">Pricing</a></li>
+                <li><a href="#blog" class="hover:underline">Blog</a></li>
+                <li><a href="#contact" class="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="flex-1">
+              <h2 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Support</h2>
+              <ul class="space-y-2 sm:space-y-4 text-base sm:text-lg">
+                <li><a href="#faq" class="hover:underline">Faq's</a></li>
+                <li><a href="https://www.facebook.com/messages/t/100442469394367" target="_blank"
+                    class="hover:underline">Live Chat</a></li>
+              </ul>
+            </div>
+
+            <div class="flex-1">
+              <h2 class="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Social Media</h2>
+              <ul class="space-y-2 sm:space-y-4 text-base sm:text-lg">
+                <li><a href="https://www.facebook.com/profile.php?id=100083305864216" target="_blank"
+                    class="hover:underline"><i class="fab fa-facebook"></i> Facebook</a>
+                </li>
+                <li><a
+                    href="https://api.whatsapp.com/send?phone=%2B639564319244&context=ARDfqwU9YPaeYeiI0hdRmg7zdAgm6BaA0eRfIYJsVw54oIfIiBBgGYDudNxk5W5nR-vqZqdtC_D7MWJMR3LSBea8G5AO-5eIhnz2wwASauK_-wVnBzzM-Tr-U0S-8jBfhJHPnJPA3rKPAbi6VkRdQX0JMA&source=FB_Page&app=facebook&entry_point=page_cta&fbclid=IwY2xjawF5aUtleHRuA2FlbQIxMAABHexsuLRIhb5lPDThVc5bCQ1_i44VRqFFt9MaH8oaYtEGiwUZGGq9SNdW-Q_aem_ClnGRkxtjcfBWwA2DZhSFA"
+                    target="_blank" class="hover:underline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </li>
+                <li><a href="https://www.facebook.com/messages/t/100442469394367" target="_blank"
+                    class="hover:underline"><i class="fas fa-comment-dots"></i> Message</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+    </div>
     </footer>
 
     <script src="index.js"></script>
-  </body>
+</body>
+
 </html>
